@@ -14,17 +14,25 @@
 
 void ft_sa(t_stack stack)
 {
+  t_stack temp;
 
+  temp = &stack->next;
+  stack->next = &stack;
+  stack = &temp;
 }
 
 void ft_sb(t_stack stack)
 {
-
+  t_stack temp;
+  temp = &stack->next;
+  stack->next = &stack;
+  stack = &temp;
 }
 
-void ft_ss(t_stack stack)
+void ft_ss(t_stack stack_a, t_stack stack_b)
 {
-
+  ft_sa(stack_a);
+  ft_sb(stack_b)
 }
 
 void ft_pa(t_stack stack)

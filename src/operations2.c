@@ -14,7 +14,12 @@
 
 void ft_ra(t_stack stack)
 {
-  
+  t_stack temp;
+  temp = &stack;
+
+  while(stack->next)
+    stack = &stack->next;
+  stack = &temp;
 }
 
 void ft_rb(t_stack stack)
@@ -24,7 +29,7 @@ void ft_rb(t_stack stack)
 
 void ft_rr(t_stack stack)
 {
-
+  
 }
 
 void ft_rra(t_stack stack)
