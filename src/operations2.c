@@ -14,12 +14,7 @@
 
 void ft_ra(t_stack stack)
 {
-  t_stack temp;
-  temp = &stack;
 
-  while(stack->next)
-    stack = &stack->next;
-  stack = &temp;
 }
 
 void ft_rb(t_stack stack)
@@ -32,12 +27,26 @@ void ft_rr(t_stack stack)
   
 }
 
-void ft_rra(t_stack stack)
+void ft_rra(t_stack head, int flag)
 {
+  t_stack temp;
 
+  temp = &head;
+  while(head->next)
+    head = &head->next;
+  head = &temp;
+  if(flag)
+    ft_printf("rra\n");
 }
 
-void ft_rrb(t_stack stack)
+void ft_rrb(t_stack stack, int flag)
 {
+  t_stack temp;
 
+  temp = &head;
+  while(head->next)
+    head = &head->next;
+  head = &temp;
+  if(flag)
+    ft_printf("rrb\n");
 }
