@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:21 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/07 14:46:19 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/09/07 15:25:49 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void ft_ra(t_stack head, int flag)
   t_stack something;
   t_stack temp;
 
-  tail = ft_last_node(stack);
+  tail = ft_last_node(head);
   temp = head;
   head = head->next;
   tail->next = temp;
@@ -33,7 +33,7 @@ void ft_rb(t_stack head, int flag)
   t_stack something;
   t_stack temp;
 
-  tail = ft_last_node(stack);
+  tail = ft_last_node(head);
   temp = head;
   head = head->next;
   tail->next = temp;
@@ -54,7 +54,7 @@ void ft_rra(t_stack head, int flag)
   t_stack tail;
   t_stack something;
 
-  if(ft_stack_size < 2)
+  if(ft_stack_size(head) < 2)
     return (-1);
   tail = ft_last_node(head);
   something = tail->previous;
@@ -70,12 +70,12 @@ void ft_rrb(t_stack head, int flag)
   t_stack tail;
   t_stack something;
 
-  if(ft_stack_size < 2)
+  if(ft_stack_size(head) < 2)
     return (-1);
-  tail = ft_last_node(stack);
+  tail = ft_last_node(head);
   something = tail->previous;
   something->next = NULL;
-  tail->next = stack;
+  tail->next = head;
   if(flag)
     ft_printf("rrb\n");
 }
