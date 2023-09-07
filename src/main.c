@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/07 15:41:41 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/09/07 16:00:36 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int main(void)
   while(head.next)
   {
     printf("%i", head.content);
-    head = head.next;
+    head = *head.next;
   }
 
   return (0);
