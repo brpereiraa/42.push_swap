@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:25 by brpereir          #+#    #+#             */
-/*   Updated: 2023/08/08 18:13:31 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/09/05 17:07:40 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void ft_sa(t_stack head, int flag)
 {
   t_stack temp;
   
+  if(ft_stack_size < 2)
+    return (-1);
   temp = &head;
   head = head->next;
   head->next = temp;
@@ -27,6 +29,8 @@ void ft_sb(t_stack head, int flag)
 {
   t_stack temp;
   
+  if(ft_stack_size < 2)
+    return (-1)
   temp = &head;
   head = head->next;
   head->next = temp;
@@ -48,6 +52,6 @@ void ft_pa(t_stack stack_a, t_stack stack_b)
 void ft_pb(t_stack stack_a, t_stack stack_b)
 {
   
-  stack_a->next = stack_b; 9876544 69789
+  stack_a->next = stack_b; 
 
 }
