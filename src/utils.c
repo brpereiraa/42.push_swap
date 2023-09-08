@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-t_stack ft_add_next(t_stack stack, int content)
+t_stack ft_new_stack(t_stack stack, int content)
 {
   t_stack new_stack;
   

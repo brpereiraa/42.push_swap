@@ -47,11 +47,27 @@ void ft_ss(t_stack *head_a, t_stack *head_b)
   printf("ss\n");
 }
 
-void ft_pa(t_stack stack_a, t_stack stack_b)
+void ft_pa(t_stack *head_a, t_stack *head_b)
 {
+  t_stack *temp;
+
+  if(head_a == NULL)
+    return ;
+  temp = head_a;
+  temp->next = head_b;
+  head_a = head_a->next;
+  head_b = temp;
+  
 }
 
-void ft_pb(t_stack stack_a, t_stack stack_b)
+void ft_pb(t_stack *head_a, t_stack *head_b)
 {
-  
+  t_stack *temp;
+
+  if(head_b == NULL)
+    return ;
+  temp = head_b;
+  temp->next = head_a;
+  head_b = head_b->next;
+  head_a = temp;
 }

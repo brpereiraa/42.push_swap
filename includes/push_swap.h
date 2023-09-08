@@ -21,7 +21,7 @@ void ft_rr(t_stack *head_a, t_stack *head_b);
 int ft_rra(t_stack *head, int flag);
 int ft_rrb(t_stack *head, int flag);
 void ft_rrr(t_stack *head_a, t_stack *head_b);
-t_stack ft_add_next(t_stack stack, int content);
+t_stack ft_new_stack(t_stack stack, int content);
 t_stack ft_last_node(t_stack *head);
 size_t ft_stack_size(t_stack *head);
 
