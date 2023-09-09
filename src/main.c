@@ -14,45 +14,53 @@
 #include <stdio.h>
 #include "../includes/push_swap.h"
 
-// int main(int argc, char **argv)
-// {
-//   int i;
-//   t_stack stack;
-
-// 	if (argc == 1)
-// 	{
-// 		printf("Wrong number of arguments");
-//     return(0);
-// 	}
-//   i = 1;
-//   while(i < (argc))
-//   {
-//     stack.content = argv[i];
-//     printf("%s", stack.content);
-//     i++;
-//     stack = ft_add_next(stack, argv[i]);
-//   }
-// }
-
-int main(void)
-{
-  t_stack head;
-  t_stack next;
-  t_stack third;
-  head.content = 1;
-  head.next = &next;
-  next.content = 2; 
-  next.next = &third;
-  third.content = 3; 
-
-  while(head.next)
-  {
-    printf("%i", head.content);
-    head = *head.next;
-  }
-
-  return (0);
+void ft_sort_stack(t_stack *stack_a, t_stack *stack_b){
+  if (ft_stack_size(stack_a) <= 5)
+    // ft_simple_sort();
+  else 
+    // ft_radix_sort();
 }
+
+int main(int argc, char **argv)
+{
+  int i;
+  t_stack stack_a;
+  t_stack stack_b;
+
+	if (argc < 2)
+    return(-1);
+  i = 1;
+  if(ft_is_sorted(stack_a))
+    return (0);
+    
+  while(i < (argc))
+  {
+    stack_a.content = argv[i];
+    printf("%s", stack.content);
+    i++;
+    stack = ft_add_next(stack, argv[i]);
+  }
+}
+
+// int main(void)
+// {
+//   t_stack head;
+//   t_stack next;
+//   t_stack third;
+//   head.content = 1;
+//   head.next = &next;
+//   next.content = 2; 
+//   next.next = &third;
+//   third.content = 3; 
+
+//   while(head.next)
+//   {
+//     printf("%i", head.content);
+//     head = *head.next;
+//   }
+
+//   return (0);
+// }
 
 
 // cc src/main.c src/operations.c src/operations2.c src/operations3.c src/utils.c includes/push_swap.h

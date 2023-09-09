@@ -39,3 +39,18 @@ size_t ft_stack_size(t_stack *head)
   }
   return i;
 }
+
+int ft_is_sorted(t_stack *head)
+{
+  while(head->next)
+  {
+    if (head->next->content < head->content)
+      return (0);
+  }
+  return (1);
+}
+
+t_stack ft_init_stack(t_stack stack, int argc, char **argv)
+{
+
+}
