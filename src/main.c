@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/11 16:52:30 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/09/11 18:17:31 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void ft_sort_stack(t_stack *stack_a, t_stack *stack_b){
 
 int main(int argc, char **argv)
 {
-  int i;
   t_stack *stack_a;
   t_stack *stack_b;
 
@@ -32,17 +31,29 @@ int main(int argc, char **argv)
 
 	if (argc < 2)
     return(-1);
-  i = 1;
-  if(ft_is_sorted(stack_a))
-    return (0);
+  // if(ft_is_sorted(stack_a))
+    // return (0);
     
-  while(i < (argc))
-  {
-    // ft_add_next(&stack_a, 1);
-    ft_add_next(stack_a, atoi(argv[i]));
-    printf("%i\n miguel\n", stack_a->content);
-    i++;
+  for (int i = 1; i < argc; i++) {
+    int content = atoi(argv[i]);
+    ft_add_next(stack_a, content);
   }
+
+  printf("Contents of the stack before:\n");
+    t_stack *current = stack_a;
+    while (current) {
+      printf("%i\n", current->content);
+      current = current->next;
+    }
+
+  ft_sa(stack_a, 0);
+
+  printf("Contents of the stack after:\n");
+    t_stack *temp = stack_a;
+    while (temp) {
+      printf("%i\n", temp->content);
+      temp = temp->next;
+  } 
 }
 
 // int main(void)

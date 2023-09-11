@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:25 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/07 16:08:43 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/09/11 19:12:57 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,29 @@
 
 int ft_sa(t_stack *head, int flag)
 {
-  t_stack temp;
+  int temp;
   
   if(ft_stack_size(head) < 2)
     return (-1);
-  temp = *head;
-  head = head->next;
-  head->next = &temp;
-  if(flag)
-    printf("sa\n");
+  temp = head->content;
+  head->content = head->next->content;
+  head->next->content = temp;
   return (0);
 }
 
 int ft_sb(t_stack *head, int flag)
 {
-  t_stack temp;
+  int temp;
   
   if(ft_stack_size(head) < 2)
     return (-1);
-  temp = *head;
-  head = head->next;
-  head->next = &temp;
-  if(flag)
-    printf("sb\n");
+  temp = head->content;
+  head->content = head->next->content;
+  head->next->content = temp;
   return (0);
 }
 
-void ft_ss(t_stack *head_a, t_stack *head_b)
+void ft_ss(t_stack  *head_a, t_stack *head_b)
 {
   ft_sa(head_a, 0);
   ft_sb(head_b, 0);
