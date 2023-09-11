@@ -15,3 +15,20 @@ void ft_add_last(t_stack *stack, t_stack *node)
 	stack->next = node;
 	node->previous = stack;
 }
+
+void ft_add_next(t_stack *stack, int content)
+{
+	t_stack *node;
+	node = (t_stack *)malloc(sizeof(t_stack));
+	if(!node)
+		return ;
+	node->content = content;
+	node->next = NULL;
+	printf("n");
+	while(stack->next)
+	{
+		stack = stack->next;
+	}
+	// *stack->next = node;
+	stack->next = node;
+}

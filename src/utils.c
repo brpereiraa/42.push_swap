@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:33 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/07 16:01:32 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:37:36 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int ft_is_sorted(t_stack *head)
   return (1);
 }
 
-t_stack ft_init_stack(t_stack stack, int argc, char **argv)
-{
+  // t_stack ft_init_stack(t_stack stack, int argc, char **argv)
+  // {
 
-}
+  // }
