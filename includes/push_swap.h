@@ -29,6 +29,7 @@ int ft_is_sorted(t_stack *head);
 t_stack ft_node_new(int content);
 void ft_add_last(t_stack *stack, t_stack *node);
 void ft_add_next(t_stack *stack, int content);
+void ft_stack_init(t_stack *stack, int content);
 
 #endif
 

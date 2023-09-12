@@ -24,11 +24,16 @@ void ft_add_next(t_stack *stack, int content)
 		return ;
 	node->content = content;
 	node->next = NULL;
-	printf("n");
 	while(stack->next)
 	{
 		stack = stack->next;
 	}
 	// *stack->next = node;
 	stack->next = node;
+}			
+
+void ft_stack_init(t_stack *stack, int content)
+{
+	stack->content = content;
+	stack->next = NULL;
 }
