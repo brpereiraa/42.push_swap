@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:21 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/14 17:02:20 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/09/14 17:50:57 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,48 +49,39 @@ void ft_rr(t_stack *head_a, t_stack *head_b)
   printf("rr\n");
 }
 
-int ft_rra(t_stack *head, int flag)
+int ft_rra(t_stack **head, int flag)
 {
   t_stack *tail;
-  t_stack *something;
   t_stack *new_tail;
 
   tail = (t_stack *)malloc(sizeof(t_stack));
-  something = (t_stack *)malloc(sizeof(t_stack));
   new_tail = (t_stack *)malloc(sizeof(t_stack));
-  if(ft_stack_size(head) < 2)
+  if(ft_stack_size(*head) < 2)
     return (-1);
-  // *tail = ft_last_node(head);
-  // something = tail->previous;
-  // something->next = NULL;
-  // tail->next = head;
-  // head = tail;
-  // if(flag)
-  //   printf("rra\n");
-  // return (0);
-  *tail = ft_last_node(head);
+  *tail = ft_last_node(*head);
   new_tail = tail->previous;
   new_tail->next = NULL;
-  tail->next = head;
-  head = tail;
-  printf("head: %i, %i, %i \n", head->content, head->next->content, head->next->next->content);
-
+  tail->next = *head;
+  *head = tail;
   if(flag)
     printf("rra\n");
   return (0);
 }
 
-int ft_rrb(t_stack *head, int flag)
+int ft_rrb(t_stack **head, int flag)
 {
   t_stack *tail;
-  t_stack *something;
+  t_stack *new_tail;
 
-  if(ft_stack_size(head) < 2)
+  tail = (t_stack *)malloc(sizeof(t_stack));
+  new_tail = (t_stack *)malloc(sizeof(t_stack));
+  if(ft_stack_size(*head) < 2)
     return (-1);
-  *tail = ft_last_node(head);
-  something = tail->previous;
-  something->next = NULL;
-  tail->next = head;
+  *tail = ft_last_node(*head);
+  new_tail = tail->previous;
+  new_tail->next = NULL;
+  tail->next = *head;
+  *head = tail;
   if(flag)
     printf("rrb\n");
   return (0);

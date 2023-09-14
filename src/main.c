@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/14 17:00:26 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/09/14 17:50:19 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,40 +23,37 @@ void ft_sort_stack(t_stack *stack_a, t_stack *stack_b){
 
 int main(int argc, char **argv)
 {
-  t_stack *stack_a;
-  t_stack *stack_b;
+  t_stack *head_a;
+  t_stack *head_b;
 
-  stack_a = (t_stack *)malloc(sizeof(t_stack));
-  stack_b = (t_stack *)malloc(sizeof(t_stack));
+  head_a = (t_stack *)malloc(sizeof(t_stack));
+  head_b = (t_stack *)malloc(sizeof(t_stack));
 
 	if (argc < 2)
     return(-1);
 
-  ft_stack_init(stack_a, atoi(argv[1]));    
-  ft_stack_init(stack_b, atoi(argv[1]));    
+  ft_stack_init(head_a, atoi(argv[1]));    
+  ft_stack_init(head_b, atoi(argv[1]));    
   for (int i = 2; i < argc; i++) {
     int content = atoi(argv[i]);
-    ft_add_next(stack_a, content);
+    ft_add_next(head_a, content);
   }
-  if (ft_is_sorted(stack_a))
+  if (ft_is_sorted(head_a))
     return (0);
 
   printf("Contents of the stack before:\n");
-    t_stack *current = stack_a;
+    t_stack *current = head_a;
     while (current) {
       printf("%i\n", current->content);
       current = current->next;
     }
-
-  ft_rra(stack_a, 1);
-  printf("head: %i, %i, %i \n",stack_a->content, stack_a->next->content, stack_a->next->next->content);
-
-  // printf("Contents of the stack after:\n");
-  //   t_stack *temp = stack_a;
-  //   while (temp) {
-  //     printf("%i\n", temp->content);
-  //     temp = temp->next;
-  // } 
+  ft_rra(&head_a, 1);
+  printf("Contents of the stack after:\n");
+    t_stack *temp = head_a;
+    while (temp) {
+      printf("%i\n", temp->content);
+      temp = temp->next;
+  } 
 }
 
 // int main(void)
