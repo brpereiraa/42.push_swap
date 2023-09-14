@@ -28,7 +28,6 @@ void ft_add_next(t_stack *stack, int content)
 	{
 		stack = stack->next;
 	}
-	// *stack->next = node;
 	stack->next = node;
 }			
 

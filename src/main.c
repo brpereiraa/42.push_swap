@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/12 17:53:38 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/09/14 15:31:01 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ int main(int argc, char **argv)
 
 	if (argc < 2)
     return(-1);
-  // if(ft_is_sorted(stack_a))
-    // return (0);
 
   ft_stack_init(stack_a, atoi(argv[1]));    
   ft_stack_init(stack_b, atoi(argv[1]));    
@@ -40,6 +38,8 @@ int main(int argc, char **argv)
     int content = atoi(argv[i]);
     ft_add_next(stack_a, content);
   }
+  if(ft_is_sorted(stack_a))
+    return (0);
 
   printf("Contents of the stack before:\n");
     t_stack *current = stack_a;

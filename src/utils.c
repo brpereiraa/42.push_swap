@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:33 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/12 16:35:31 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/09/14 15:35:22 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ int ft_is_sorted(t_stack *head)
   {
     if (head->next->content < head->content)
       return (0);
+    head = head->next;
   }
+  printf("Stack is already sorted");
   return (1);
 }
 
