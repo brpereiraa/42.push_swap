@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/14 17:50:19 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/09/14 18:03:07 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int main(int argc, char **argv)
       printf("%i\n", current->content);
       current = current->next;
     }
-  ft_rra(&head_a, 1);
+  ft_ra(&head_a, 1);
   printf("Contents of the stack after:\n");
     t_stack *temp = head_a;
     while (temp) {
