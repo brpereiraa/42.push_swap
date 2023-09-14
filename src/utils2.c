@@ -29,10 +29,12 @@ void ft_add_next(t_stack *stack, int content)
 		stack = stack->next;
 	}
 	stack->next = node;
+	node->previous = stack;
 }			
 
 void ft_stack_init(t_stack *stack, int content)
 {
 	stack->content = content;
 	stack->next = NULL;
+	stack->previous = NULL;
 }

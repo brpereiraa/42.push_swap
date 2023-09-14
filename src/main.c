@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/14 15:31:01 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/09/14 17:00:26 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main(int argc, char **argv)
     int content = atoi(argv[i]);
     ft_add_next(stack_a, content);
   }
-  if(ft_is_sorted(stack_a))
+  if (ft_is_sorted(stack_a))
     return (0);
 
   printf("Contents of the stack before:\n");
@@ -48,13 +48,15 @@ int main(int argc, char **argv)
       current = current->next;
     }
 
-  ft_sa(stack_a, 0);
-  printf("Contents of the stack after:\n");
-    t_stack *temp = stack_a;
-    while (temp) {
-      printf("%i\n", temp->content);
-      temp = temp->next;
-  } 
+  ft_rra(stack_a, 1);
+  printf("head: %i, %i, %i \n",stack_a->content, stack_a->next->content, stack_a->next->next->content);
+
+  // printf("Contents of the stack after:\n");
+  //   t_stack *temp = stack_a;
+  //   while (temp) {
+  //     printf("%i\n", temp->content);
+  //     temp = temp->next;
+  // } 
 }
 
 // int main(void)
