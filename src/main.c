@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/14 18:03:07 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/09/18 15:44:27 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,4 @@ int main(int argc, char **argv)
 // }
 
 
-// cc src/main.c src/operations.c src/operations2.c src/operations3.c src/utils.c src/utils2.c includes/push_swap.h
+// cc src/main.c src/operations.c src/operations2.c src/operations3.c src/utils.c src/utils2.c includes/push_swap.h;
