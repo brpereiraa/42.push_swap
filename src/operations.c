@@ -47,20 +47,19 @@ void ft_pa(t_stack *head_a, t_stack *head_b)
 {
   t_stack *temp;
 
-  if(head_a == NULL)
+  if(!head_a)
     return ;
   temp = head_a;
   temp->next = head_b;
   head_a = head_a->next;
   head_b = temp;
-  
 }
 
 void ft_pb(t_stack *head_a, t_stack *head_b)
 {
   t_stack *temp;
 
-  if(head_b == NULL)
+  if(!head_b)
     return ;
   temp = head_b;
   temp->next = head_a;

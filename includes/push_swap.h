@@ -6,7 +6,7 @@
 
 typedef struct s_stack {
   int content;
-  // int index;
+  int index;
   struct s_stack *next;
   struct s_stack *previous;
 }     t_stack;
@@ -30,9 +30,11 @@ t_stack ft_node_new(int content);
 void ft_add_last(t_stack *stack, t_stack *node);
 void ft_add_next(t_stack *stack, int content);
 void ft_stack_init(t_stack *stack, int content);
-void ft_sort_three(t_stack *stack_a)
+void ft_sort_three(t_stack *stack_a);
 void ft_simple_sort(t_stack *stack_a, t_stack *stack_b);
 void ft_min_four(t_stack *stack_a, t_stack *stack_b);
+int ft_min_value(t_stack *stack);
+
 
 #endif
 

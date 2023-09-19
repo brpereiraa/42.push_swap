@@ -35,7 +35,23 @@ void ft_min_four(t_stack *stack_a, t_stack *stack_b, int i)
 	}
 }
 
-void ft_min_five(t_stack *stack_a, t_stack *stack_b)
+void ft_min_five(t_stack *stack_a, t_stack *stack_b, int i)
 {
-
+	if (i <= 2)
+		ft_min_four(stack_a, stack_b, i);
+	else if (i == 3)
+	{
+		ft_rra(stack_a, 0);
+		ft_rra(stack_a, 0);
+		if (ft_is_sorted(stack_a))
+			return ;
+		ft_pb(stack_a, stack_b);
+	}
+	else if (i == 4)
+	{
+		ft_rra(stack_a, 0);
+		if (ft_check_sorted(*stack_a))
+			return ;
+		ft_pb(stack_a, stack_b);
+	}
 }

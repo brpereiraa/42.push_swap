@@ -38,3 +38,21 @@ void ft_stack_init(t_stack *stack, int content)
 	stack->next = NULL;
 	stack->previous = NULL;
 }
+
+int ft_min_value(t_stack stack)
+{
+	int	min_value;
+	int	i;
+
+	min_value = 0;
+	i = 0;
+	while(&stack)
+	{
+		if((&stack)->content > min_value)
+		{
+			i = (&stack)->index;
+			min_value = (&stack)->content;
+		}
+	}
+	return (i);
+}
