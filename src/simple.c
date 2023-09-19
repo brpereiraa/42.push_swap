@@ -6,13 +6,13 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:46:17 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/18 16:21:21 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/09/19 15:12:12 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void ft_simple_sort(t_stack stack_a, t_stack stack_b)
+void ft_simple_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	int	size;
 	size = ft_stack_size(&stack_a);
@@ -51,4 +51,14 @@ void ft_sort_three(t_stack *stack_a)
 	}
 	else
 		ft_rra(&stack_a, 1);
+}
+
+void ft_sort_four(t_stack *stack_a, t_stack *stack_b)
+{
+
+}
+
+void ft_sort_five(t_stack *stack_a, t_stack *stack_b)
+{
+	
 }
