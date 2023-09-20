@@ -10,10 +10,17 @@ t_stack ft_node_new(int content)
 
 void ft_add_last(t_stack *stack, t_stack *node)
 {
+	int	i;
+
+	i = 0;
 	while(stack->next)
+	{
 		stack = stack->next;
+		i++;
+	}
 	stack->next = node;
 	node->previous = stack;
+	node->index = i;
 }
 
 void ft_add_next(t_stack *stack, int content)
