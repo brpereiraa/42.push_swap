@@ -55,10 +55,25 @@ void ft_sort_three(t_stack *stack_a)
 
 void ft_sort_four(t_stack *stack_a, t_stack *stack_b)
 {
-
+	int	min;
+	
+	min =  ft_min_value(&stack_a);
+	ft_min_four(stack_a, stack_b, min);
+	ft_sort_three(stack_a);
+	ft_pa(stack_a, stack_b);
 }
 
 void ft_sort_five(t_stack *stack_a, t_stack *stack_b)
 {
-	
+	int	i;
+
+	if (ft_is_sorted(stack_a))
+		return ;
+	i = ft_min_value(stack_a);
+	min_five(stack_a, stack_b, i);
+	i = ft_min_value(stack_a);
+	min_four(stack_a, stack_b, i);
+	ft_sort_three(stack_a);
+	ft_pa(stack_a, stack_b);
+	ft_pa(stack_a, stack_b);
 }
