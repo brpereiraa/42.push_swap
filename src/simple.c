@@ -6,7 +6,7 @@
 /*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:46:17 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/03 15:37:05 by brunolopes       ###   ########.fr       */
+/*   Updated: 2023/10/03 15:54:40 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void ft_sort_three(t_stack *stack_a)
 		ft_sa(stack_a, 1);		
 		ft_ra(&stack_a, 1);		
 	}
-	else
+	else if(a < b && b > c && a > c)
 		ft_rra(&stack_a, 1);
 }
 
