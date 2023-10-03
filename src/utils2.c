@@ -46,20 +46,33 @@ void ft_stack_init(t_stack *stack, int content)
 	stack->previous = NULL;
 }
 
-int ft_min_value(t_stack stack)
+int ft_min_value(t_stack **stack)
 {
-	int	min_value;
-	int	i;
+	t_stack	*temp;
+	int		i;
+	int		min_stack;
 
-	min_value = 0;
 	i = 0;
-	while(&stack)
+	temp = *stack;
+	min_stack = ft_min(*stack);
+	while (temp->content != min_stack)
 	{
-		if((&stack)->content > min_value)
-		{
-			i = (&stack)->index;
-			min_value = (&stack)->content;
-		}
+		temp = temp->next;
+		i++;
 	}
 	return (i);
+}
+
+int	ft_min(t_stack *lst)
+{
+	int	min;
+
+	min = lst->content;
+	while (lst)
+	{
+		if (lst->content < min)
+			min = lst->content;
+		lst = lst->next;
+	}
+	return (min);
 }

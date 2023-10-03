@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:25 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/12 17:54:10 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/10/03 15:14:45 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int ft_sa(t_stack *head, int flag)
   temp = head->content;
   head->content = head->next->content;
   head->next->content = temp;
+  if(flag)
+    write(1, "sa\n", 3);
   return (0);
 }
 
@@ -33,6 +35,8 @@ int ft_sb(t_stack *head, int flag)
   temp = head->content;
   head->content = head->next->content;
   head->next->content = temp;
+  if(flag)
+    write(1, "sb\n", 3);
   return (0);
 }
 

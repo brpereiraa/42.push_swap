@@ -6,7 +6,7 @@
 #    By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/08 19:05:23 by brpereir          #+#    #+#              #
-#    Updated: 2023/10/03 15:04:50 by brunolopes       ###   ########.fr        #
+#    Updated: 2023/10/03 15:12:38 by brunolopes       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJS = ${SRC:.c=.o}
 RM = rm -f
 CFLAGS = -Wall -Wall -Wextra
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJS)
 	cc $(CFLAGS) $(OBJS) -o $(NAME) 
 
 all: $(NAME)

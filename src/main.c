@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/18 15:44:27 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/10/03 15:34:21 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <stdio.h>
 #include "../includes/push_swap.h"
 
-void ft_sort_stack(t_stack *stack_a, t_stack *stack_b){
+// void ft_sort_stack(t_stack *stack_a, t_stack *stack_b){
   // if (ft_stack_size(stack_a) <= 5)
     // ft_simple_sort();
   // else 
     // ft_radix_sort();
-}
+// }
 
 int main(int argc, char **argv)
 {
@@ -40,20 +40,8 @@ int main(int argc, char **argv)
   }
   if (ft_is_sorted(head_a))
     return (0);
-
-  printf("Contents of the stack before:\n");
-    t_stack *current = head_a;
-    while (current) {
-      printf("%i\n", current->content);
-      current = current->next;
-    }
-  ft_ra(&head_a, 1);
-  printf("Contents of the stack after:\n");
-    t_stack *temp = head_a;
-    while (temp) {
-      printf("%i\n", temp->content);
-      temp = temp->next;
-  } 
+  ft_simple_sort(head_a, head_b);
+  
 }
 
 // int main(void)

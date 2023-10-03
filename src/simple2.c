@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:12:56 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/20 16:16:18 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/10/03 15:31:47 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,15 @@ void ft_min_five(t_stack *stack_a, t_stack *stack_b, int i)
 		ft_min_four(stack_a, stack_b, i);
 	else if (i == 3)
 	{
-		ft_rra(stack_a, 0);
-		ft_rra(stack_a, 0);
+		ft_rra(&stack_a, 0);
+		ft_rra(&stack_a, 0);
 		if (ft_is_sorted(stack_a))
 			return ;
 		ft_pb(stack_a, stack_b);
 	}
 	else if (i == 4)
 	{
-		ft_rra(stack_a, 0);
+		ft_rra(&stack_a, 0);
 		if (ft_is_sorted(stack_a))
 			return ;
 		ft_pb(stack_a, stack_b);

@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:33 by brpereir          #+#    #+#             */
-/*   Updated: 2023/09/14 15:35:22 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/10/03 15:36:54 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack ft_new_stack(t_stack stack, int content)
+t_stack ft_new_stack(t_stack **stack, int content)
 {
   t_stack new_stack;
   
-  stack.next = &new_stack;
+  (*stack)->next = &new_stack;
   new_stack.content = content;
   return (new_stack);
 }
@@ -32,12 +32,13 @@ size_t ft_stack_size(t_stack *head)
 {
   size_t i;
 
+  i = 0;
   while (head->next)
   {
     head = head->next;
     i++;
   }
-  return i;
+  return ++i;
 }
 
 int ft_is_sorted(t_stack *head)

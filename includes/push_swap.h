@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 typedef struct s_stack {
   int content;
@@ -22,7 +23,7 @@ void ft_rr(t_stack *head_a, t_stack *head_b);
 int ft_rra(t_stack **head, int flag);
 int ft_rrb(t_stack **head, int flag);
 void ft_rrr(t_stack *head_a, t_stack *head_b);
-t_stack ft_new_stack(t_stack stack, int content);
+t_stack ft_new_stack(t_stack **stack, int content);
 t_stack ft_last_node(t_stack *head);
 size_t ft_stack_size(t_stack *head);
 int ft_is_sorted(t_stack *head);
@@ -36,8 +37,8 @@ void ft_min_four(t_stack *stack_a, t_stack *stack_b, int i);
 void ft_min_five(t_stack *stack_a, t_stack *stack_b, int i);
 void ft_sort_four(t_stack *stack_a, t_stack *stack_b);
 void ft_sort_five(t_stack *stack_a, t_stack *stack_b);
-int ft_min_value(t_stack stack);
-
+int ft_min_value(t_stack **stack);
+int	ft_min(t_stack *lst);
 
 #endif
 

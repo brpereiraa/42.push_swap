@@ -6,7 +6,7 @@
 /*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:46:17 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/03 15:03:45 by brunolopes       ###   ########.fr       */
+/*   Updated: 2023/10/03 15:37:05 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void ft_simple_sort(t_stack *stack_a, t_stack *stack_b)
 {
-	int	size;
+	size_t	size;
 	size = ft_stack_size(stack_a);
 
 	if(size == 2)
@@ -57,7 +57,7 @@ void ft_sort_four(t_stack *stack_a, t_stack *stack_b)
 {
 	int	min;
 	
-	min =  ft_min_value(*stack_a);
+	min =  ft_min_value(&stack_a);
 	ft_min_four(stack_a, stack_b, min);
 	ft_sort_three(stack_a);
 	ft_pa(stack_a, stack_b);
@@ -69,9 +69,9 @@ void ft_sort_five(t_stack *stack_a, t_stack *stack_b)
 
 	if (ft_is_sorted(stack_a))
 		return ;
-	i = ft_min_value(*stack_a);
+	i = ft_min_value(&stack_a);
 	ft_min_five(stack_a, stack_b, i);
-	i = ft_min_value(*stack_a);
+	i = ft_min_value(&stack_a);
 	ft_min_four(stack_a, stack_b, i);
 	ft_sort_three(stack_a);
 	ft_pa(stack_a, stack_b);
