@@ -19,7 +19,7 @@ void ft_min_four(t_stack **stack_a, t_stack **stack_b, int i)
 	else if (i == 1)
 	{
 		ft_ra(stack_a, 1);
-		printf("d: %i\n", (*stack_a)->next->next->content);
+		// printf("d: %i\n", (*stack_a)->next->next->content);
 		if (ft_is_sorted(*stack_a))
 			return ;
 		ft_pb(stack_a, stack_b);
