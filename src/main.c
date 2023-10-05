@@ -6,7 +6,7 @@
 /*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/03 16:19:51 by brunolopes       ###   ########.fr       */
+/*   Updated: 2023/10/04 17:02:02 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void ft_sort_stack(t_stack *stack_a, t_stack *stack_b){
   if (ft_stack_size(stack_a) <= 5)
-    ft_simple_sort(stack_a, stack_b);
+    ft_simple_sort(&stack_a, &stack_b);
   // else 
     // ft_radix_sort();
 }

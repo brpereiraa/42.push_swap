@@ -6,7 +6,7 @@
 /*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:25 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/03 15:14:45 by brunolopes       ###   ########.fr       */
+/*   Updated: 2023/10/04 17:00:06 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,26 +47,28 @@ void ft_ss(t_stack  *head_a, t_stack *head_b)
   printf("ss\n");
 }
 
-void ft_pa(t_stack *head_a, t_stack *head_b)
+void ft_pa(t_stack **head_a, t_stack **head_b)
 {
-  t_stack *temp;
+  t_stack	*temp;
 
-  if(!head_a)
-    return ;
-  temp = head_a;
-  temp->next = head_b;
-  head_a = head_a->next;
-  head_b = temp;
+	if (!*head_b)
+		return ;
+	temp = *head_a;
+	*head_a = *head_b;
+	*head_b = (*head_b)->next;
+	(*head_a)->next = temp;
+	printf("pa\n");
 }
 
-void ft_pb(t_stack *head_a, t_stack *head_b)
+void ft_pb(t_stack **head_a, t_stack **head_b)
 {
-  t_stack *temp;
+  t_stack	*temp;
 
-  if(!head_b)
-    return ;
-  temp = head_b;
-  temp->next = head_a;
-  head_b = head_b->next;
-  head_a = temp;
+	if (!*head_a)
+		return ;
+	temp = *head_b;
+	*head_b = *head_a;
+	*head_a = (*head_a)->next;
+	(*head_b)->next = temp;
+	printf("pb\n");
 }

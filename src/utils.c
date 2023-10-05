@@ -6,7 +6,7 @@
 /*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:33 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/03 15:36:54 by brunolopes       ###   ########.fr       */
+/*   Updated: 2023/10/04 16:27:01 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int ft_is_sorted(t_stack *head)
       return (0);
     head = head->next;
   }
-  printf("Stack is already sorted");
   return (1);
 }
 

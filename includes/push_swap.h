@@ -15,8 +15,8 @@ typedef struct s_stack {
 int ft_sa(t_stack *head, int flag);
 int ft_sb(t_stack *head, int flag);
 void ft_ss(t_stack *head_a, t_stack *head_b);
-void ft_pa(t_stack *stack_a, t_stack *stack_b);
-void ft_pb(t_stack *stack_a, t_stack *stack_b);
+void ft_pa(t_stack **stack_a, t_stack **stack_b);
+void ft_pb(t_stack **stack_a, t_stack **stack_b);
 void ft_ra(t_stack **head, int flag);
 void ft_rb(t_stack **head, int flag);
 void ft_rr(t_stack *head_a, t_stack *head_b);
@@ -31,12 +31,12 @@ t_stack ft_node_new(int content);
 void ft_add_last(t_stack *stack, t_stack *node);
 void ft_add_next(t_stack *stack, int content);
 void ft_stack_init(t_stack *stack, int content);
-void ft_sort_three(t_stack *stack_a);
-void ft_simple_sort(t_stack *stack_a, t_stack *stack_b);
-void ft_min_four(t_stack *stack_a, t_stack *stack_b, int i);
+void ft_simple_sort(t_stack **stack_a, t_stack **stack_b);
+void ft_sort_three(t_stack **stack_a);
+void ft_sort_four(t_stack **stack_a, t_stack **stack_b);
+void ft_sort_five(t_stack **stack_a, t_stack **stack_b);
+void ft_min_four(t_stack **stack_a, t_stack **stack_b, int i);
 void ft_min_five(t_stack *stack_a, t_stack *stack_b, int i);
-void ft_sort_four(t_stack *stack_a, t_stack *stack_b);
-void ft_sort_five(t_stack *stack_a, t_stack *stack_b);
 int ft_min_value(t_stack **stack);
 int	ft_min(t_stack *lst);
 

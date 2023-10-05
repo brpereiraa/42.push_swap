@@ -6,19 +6,19 @@
 /*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:46:17 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/03 15:54:40 by brunolopes       ###   ########.fr       */
+/*   Updated: 2023/10/04 17:03:20 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void ft_simple_sort(t_stack *stack_a, t_stack *stack_b)
+void ft_simple_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	size_t	size;
-	size = ft_stack_size(stack_a);
 
+	size = ft_stack_size(*stack_a);
 	if(size == 2)
-		ft_sa(stack_a, 1);
+		ft_sa(*stack_a, 1);
 	else if (size == 3)
 		ft_sort_three(stack_a);
 	else if (size == 4)
@@ -27,51 +27,51 @@ void ft_simple_sort(t_stack *stack_a, t_stack *stack_b)
 		ft_sort_five(stack_a, stack_b);
 }
 
-void ft_sort_three(t_stack *stack_a)
+void ft_sort_three(t_stack **stack_a)
 {
 	int	a;
 	int	b;
 	int	c;
 
-	a = stack_a->content;
-	b = stack_a->next->content;
-	c = stack_a->next->next->content;
-	if (a > b && b < c && c < a)
-		ft_sa(stack_a, 1);
+	a = (*stack_a)->content;
+	b = (*stack_a)->next->content;
+	c = (*stack_a)->next->next->content;
+	if (a > b && b < c && a < c)
+		ft_sa(*stack_a, 1);
 	else if ( a > b && b > c && a > c)
 	{
-		ft_sa(stack_a, 1);
-		ft_rra(&stack_a, 1);
+		ft_sa(*stack_a, 1);
+		ft_rra(stack_a, 1);
 	}
 	else if ( a > b  && b < c && a > c)
-		ft_ra(&stack_a, 1);
+		ft_ra(stack_a, 1);
 	else if (a < b && b > c && a < c){
-		ft_sa(stack_a, 1);		
-		ft_ra(&stack_a, 1);		
+		ft_sa(*stack_a, 1);		
+		ft_ra(stack_a, 1);		
 	}
 	else if(a < b && b > c && a > c)
-		ft_rra(&stack_a, 1);
+		ft_rra(stack_a, 1);
 }
 
-void ft_sort_four(t_stack *stack_a, t_stack *stack_b)
+void ft_sort_four(t_stack **stack_a, t_stack **stack_b)
 {
 	int	min;
 	
-	min =  ft_min_value(&stack_a);
+	min =  ft_min_value(stack_a);
 	ft_min_four(stack_a, stack_b, min);
 	ft_sort_three(stack_a);
 	ft_pa(stack_a, stack_b);
 }
 
-void ft_sort_five(t_stack *stack_a, t_stack *stack_b)
+void ft_sort_five(t_stack **stack_a, t_stack **stack_b)
 {
 	int	i;
 
-	if (ft_is_sorted(stack_a))
+	if (ft_is_sorted(*stack_a))
 		return ;
-	i = ft_min_value(&stack_a);
-	ft_min_five(stack_a, stack_b, i);
-	i = ft_min_value(&stack_a);
+	i = ft_min_value(stack_a);
+	ft_min_five(*stack_a, *stack_b, i);
+	i = ft_min_value(stack_a);
 	ft_min_four(stack_a, stack_b, i);
 	ft_sort_three(stack_a);
 	ft_pa(stack_a, stack_b);

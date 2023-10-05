@@ -63,16 +63,16 @@ int ft_min_value(t_stack **stack)
 	return (i);
 }
 
-int	ft_min(t_stack *lst)
+int	ft_min(t_stack *stack)
 {
 	int	min;
 
-	min = lst->content;
-	while (lst)
+	min = stack->content;
+	while (stack)
 	{
-		if (lst->content < min)
-			min = lst->content;
-		lst = lst->next;
+		if (stack->content < min)
+			min = stack->content;
+		stack = stack->next;
 	}
 	return (min);
 }
