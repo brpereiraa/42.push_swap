@@ -59,6 +59,7 @@ void ft_sort_four(t_stack **stack_a, t_stack **stack_b)
 	
 	min =  ft_min_value(stack_a);
 	ft_min_four(stack_a, stack_b, min);
+	// printf("something: %i : %i : %i \n", (*stack_a)->content, (*stack_a)->next->content, (*stack_a)->next->next->content);
 	ft_sort_three(stack_a);
 	ft_pa(stack_a, stack_b);
 }
@@ -70,7 +71,7 @@ void ft_sort_five(t_stack **stack_a, t_stack **stack_b)
 	if (ft_is_sorted(*stack_a))
 		return ;
 	i = ft_min_value(stack_a);
-	ft_min_five(*stack_a, *stack_b, i);
+	ft_min_five(stack_a, stack_b, i);
 	i = ft_min_value(stack_a);
 	ft_min_four(stack_a, stack_b, i);
 	ft_sort_three(stack_a);

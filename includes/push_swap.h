@@ -24,7 +24,7 @@ int ft_rra(t_stack **head, int flag);
 int ft_rrb(t_stack **head, int flag);
 void ft_rrr(t_stack *head_a, t_stack *head_b);
 t_stack ft_new_stack(t_stack **stack, int content);
-t_stack ft_last_node(t_stack *head);
+t_stack *ft_last_node(t_stack *head);
 size_t ft_stack_size(t_stack *head);
 int ft_is_sorted(t_stack *head);
 t_stack ft_node_new(int content);
@@ -36,7 +36,7 @@ void ft_sort_three(t_stack **stack_a);
 void ft_sort_four(t_stack **stack_a, t_stack **stack_b);
 void ft_sort_five(t_stack **stack_a, t_stack **stack_b);
 void ft_min_four(t_stack **stack_a, t_stack **stack_b, int i);
-void ft_min_five(t_stack *stack_a, t_stack *stack_b, int i);
+void ft_min_five(t_stack **stack_a, t_stack **stack_b, int i);
 int ft_min_value(t_stack **stack);
 int	ft_min(t_stack *lst);
 

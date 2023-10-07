@@ -15,14 +15,13 @@
 void ft_ra(t_stack **head, int flag)
 {
   t_stack *tail;
-  t_stack *temp;
 
-  tail = (t_stack *)malloc(sizeof(t_stack));
-  *tail = ft_last_node(*head);
-  temp = *head;
+  if (!(*head) || !(*head)->next)
+    return ;
+  tail = ft_last_node(*head);
+  tail->next = *head;
   *head = (*head)->next;
-  tail->next = temp;
-  temp->next = NULL;
+  tail->next->next = NULL;
   if(flag)
     printf("ra\n");
 }
@@ -30,16 +29,15 @@ void ft_ra(t_stack **head, int flag)
 void ft_rb(t_stack **head, int flag)
 {
   t_stack *tail;
-  t_stack *temp;
 
-  tail = (t_stack *)malloc(sizeof(t_stack));
-  *tail = ft_last_node(*head);
-  temp = *head;
+  if (!(*head) || !(*head)->next)
+    return ;
+  tail = ft_last_node(*head);
+  tail->next = *head;
   *head = (*head)->next;
-  tail->next = temp;
-  temp->next = NULL;
+  tail->next->next = NULL;
   if(flag)
-    printf("rb\n");
+    printf("ra\n");
 }
 
 void ft_rr(t_stack *head_a, t_stack *head_b)
@@ -58,7 +56,7 @@ int ft_rra(t_stack **head, int flag)
   new_tail = (t_stack *)malloc(sizeof(t_stack));
   if(ft_stack_size(*head) < 2)
     return (-1);
-  *tail = ft_last_node(*head);
+  tail = ft_last_node(*head);
   new_tail = tail->previous;
   new_tail->next = NULL;
   tail->next = *head;
@@ -77,7 +75,7 @@ int ft_rrb(t_stack **head, int flag)
   new_tail = (t_stack *)malloc(sizeof(t_stack));
   if(ft_stack_size(*head) < 2)
     return (-1);
-  *tail = ft_last_node(*head);
+  tail = ft_last_node(*head);
   new_tail = tail->previous;
   new_tail->next = NULL;
   tail->next = *head;

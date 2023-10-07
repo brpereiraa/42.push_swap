@@ -21,11 +21,11 @@ t_stack ft_new_stack(t_stack **stack, int content)
   return (new_stack);
 }
 
-t_stack ft_last_node(t_stack *head)
+t_stack *ft_last_node(t_stack *head)
 {
   while (head->next)
     head = head->next;
-  return (*head);
+  return (head);
 }
 
 size_t ft_stack_size(t_stack *head)
@@ -43,7 +43,7 @@ size_t ft_stack_size(t_stack *head)
 
 int ft_is_sorted(t_stack *head)
 {
-  while(head->next)
+  while(head && head->next)
   {
     if (head->next->content < head->content)
       return (0);
