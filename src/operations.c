@@ -64,7 +64,6 @@ void ft_pb(t_stack **head_a, t_stack **head_b)
 {
   t_stack	*temp;
 
-	// printf("something: %i : %i : %i \n", (*head_a)->content, (*head_a)->next->content, (*head_a)->next->next->content);
 	if (!*head_a)
 		return ;
 	temp = *head_b;
