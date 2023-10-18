@@ -6,7 +6,7 @@
 /*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:25 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/04 17:00:06 by brunolopes       ###   ########.fr       */
+/*   Updated: 2023/10/10 16:19:42 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 int ft_sa(t_stack *head, int flag)
 {
   int temp;
+  int temp_index;
   
   if(ft_stack_size(head) < 2)
     return (-1);
   temp = head->content;
+  temp_index = head->index;
   head->content = head->next->content;
+  head->index = head->next->index;
   head->next->content = temp;
+  head->next->index = temp_index;
   if(flag)
     printf("sa\n");
   return (0);

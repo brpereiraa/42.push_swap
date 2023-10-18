@@ -6,7 +6,7 @@
 /*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:46:17 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/04 17:03:20 by brunolopes       ###   ########.fr       */
+/*   Updated: 2023/10/12 14:47:17 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void ft_simple_sort(t_stack **stack_a, t_stack **stack_b)
 	size_t	size;
 
 	size = ft_stack_size(*stack_a);
-	if(size == 2)
+	if (size == 2)
 		ft_sa(*stack_a, 1);
 	else if (size == 3)
 		ft_sort_three(stack_a);
 	else if (size == 4)
 		ft_sort_four(stack_a, stack_b);
-	else if (size == 5 )
+	else if (size == 5)
 		ft_sort_five(stack_a, stack_b);
 }
 
