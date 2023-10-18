@@ -32,11 +32,10 @@ void ft_add_next(t_stack *stack, int content)
 	node->content = content;
 	node->next = NULL;
 	while(stack->next)
-	{
 		stack = stack->next;
-	}
 	stack->next = node;
 	node->previous = stack;
+	node->index = -1;
 }			
 
 void ft_stack_init(t_stack *stack, int content)
@@ -75,4 +74,13 @@ int	ft_min(t_stack *stack)
 		stack = stack->next;
 	}
 	return (min);
+}
+
+void ft_print_list(t_stack **stack)
+{
+	while(*stack)
+	{
+		printf("Value: %i\n", (*stack)->content);
+		*stack = (*stack)->next;
+	}
 }

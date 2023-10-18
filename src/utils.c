@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
+/*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:33 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/12 14:48:44 by brunolopes       ###   ########.fr       */
+/*   Updated: 2023/10/18 16:20:15 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,31 +61,30 @@ static t_stack	*get_next_min(t_stack **stack)
 	min = NULL;
 	has_min = 0;
 	head = *stack;
-	if (head)
+	while (head)
 	{
-		while (head)
+		if ((head->index == -1) && (!has_min || head->content < min->content))
 		{
-			if ((head->index == -1) && (!has_min || head->content < min->content))
-			{
-				min = head;
-				has_min = 1;
-			}
-			head = head->next;
+			min = head;
+			has_min = 1;
 		}
+		head = head->next;
 	}
 	return (min);
 }
 
 void ft_index_stack(t_stack **stack_a)
 {
-  t_stack	*head;
+ 	t_stack	*head;
 	int		index;
 
 	index = 0;
 	head = get_next_min(stack_a);
 	while (head)
 	{
+		printf("Index: %i \n", index);
 		head->index = index++;
+		printf("Value: %i \n\n", head->content);
 		head = get_next_min(stack_a);
 	}
 }

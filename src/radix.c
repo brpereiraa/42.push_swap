@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
+/*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 14:40:52 by brunolopes        #+#    #+#             */
-/*   Updated: 2023/10/12 14:59:49 by brunolopes       ###   ########.fr       */
+/*   Updated: 2023/10/18 16:06:40 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void ft_radix_sort(t_stack **stack_a, t_stack **stack_b)
 		{
 			if (!(((*stack_a)->index >> j) & 1))
 			{
-				printf("%i\n", (*stack_a)->index);
 				ft_pb(stack_a, stack_b);
 			}
 			else
@@ -55,7 +54,6 @@ void ft_radix_sort(t_stack **stack_a, t_stack **stack_b)
 		}
 		ft_radix_sort_b(stack_a, stack_b, bits, j+1);
 	}
-	printf("dwadawda\n");
 	while(ft_stack_size(*stack_b))
 		ft_pa(stack_a, stack_b);
 }
