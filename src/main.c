@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/20 15:30:12 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:35:24 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ int main(int argc, char **argv)
   t_stack *head_b;
 
   head_a = (t_stack *)malloc(sizeof(t_stack));
-  head_b = (t_stack *)malloc(sizeof(t_stack));
-
+  head_b = NULL;
 	if (argc < 2)
     return(-1);
 

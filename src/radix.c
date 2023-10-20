@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 14:40:52 by brunolopes        #+#    #+#             */
-/*   Updated: 2023/10/18 16:06:40 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/10/20 17:14:28 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	ft_radix_sort_b(t_stack **stack_a, t_stack **stack_b, int bits, int 
 	size = ft_stack_size(*stack_b);
 	while (size-- && j <= bits && !ft_is_sorted(*stack_a))
 	{
-		if ((((*stack_b)->content >> j) & 1) == 0)
+		if ((((*stack_b)->index >> j) & 1) == 0)
 			ft_rb(stack_b, 1);
 		else
 			ft_pa(stack_a, stack_b);
