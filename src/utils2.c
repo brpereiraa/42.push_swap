@@ -43,6 +43,7 @@ void ft_stack_init(t_stack *stack, int content)
 	stack->content = content;
 	stack->next = NULL;
 	stack->previous = NULL;
+	stack->index = -1;
 }
 
 int ft_min_value(t_stack **stack)
@@ -76,11 +77,12 @@ int	ft_min(t_stack *stack)
 	return (min);
 }
 
-void ft_print_list(t_stack **stack)
+void ft_print_list(t_stack *stack)
 {
-	while(*stack)
+	while(stack)
 	{
-		printf("Value: %i\n", (*stack)->content);
-		*stack = (*stack)->next;
+		printf("Value: %i\nIndex: %i\n\n", stack->content, stack->index);
+		stack = stack->next;
 	}
+	printf("\n\n");
 }

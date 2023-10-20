@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:33 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/18 16:20:15 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:28:58 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int ft_is_sorted(t_stack *head)
   return (1);
 }
 
-static t_stack	*get_next_min(t_stack **stack)
+static t_stack	*get_next_min(t_stack *stack)
 {
 	t_stack	*head;
 	t_stack	*min;
@@ -60,7 +60,7 @@ static t_stack	*get_next_min(t_stack **stack)
 
 	min = NULL;
 	has_min = 0;
-	head = *stack;
+	head = stack;
 	while (head)
 	{
 		if ((head->index == -1) && (!has_min || head->content < min->content))
@@ -79,12 +79,10 @@ void ft_index_stack(t_stack **stack_a)
 	int		index;
 
 	index = 0;
-	head = get_next_min(stack_a);
+	head = get_next_min(*stack_a);
 	while (head)
 	{
-		printf("Index: %i \n", index);
 		head->index = index++;
-		printf("Value: %i \n\n", head->content);
-		head = get_next_min(stack_a);
+		head = get_next_min(*stack_a);
 	}
 }
