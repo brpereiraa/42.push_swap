@@ -49,7 +49,7 @@ void ft_sort_three(t_stack **stack_a)
 		ft_sa(*stack_a, 1);		
 		ft_ra(stack_a, 1);		
 	}
-	else if(a < b && b > c && a > c)
+	else if (a < b && b > c && a > c)
 		ft_rra(stack_a, 1);
 }
 
@@ -57,7 +57,7 @@ void ft_sort_four(t_stack **stack_a, t_stack **stack_b)
 {
 	int	min;
 	
-	min =  ft_min_value(stack_a);
+	min = ft_min_value(stack_a);
 	ft_min_four(stack_a, stack_b, min);
 	ft_sort_three(stack_a);
 	ft_pa(stack_a, stack_b);

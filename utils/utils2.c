@@ -86,3 +86,15 @@ void ft_print_list(t_stack *stack)
 	}
 	printf("\n\n");
 }
+
+void ft_free_stack(t_stack *stack)
+{
+	t_stack *temp;
+
+	while(stack)
+	{
+		temp = stack->next;
+		free(stack);
+		stack = temp;
+	}
+}

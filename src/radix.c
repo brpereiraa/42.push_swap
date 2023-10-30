@@ -43,7 +43,7 @@ void ft_radix_sort(t_stack **stack_a, t_stack **stack_b)
 	while (++j <= bits)
 	{
 		size = ft_stack_size(*stack_a);
-		while(size-- && !ft_is_sorted(*stack_a))
+		while (size-- && !ft_is_sorted(*stack_a))
 		{
 			if (!(((*stack_a)->index >> j) & 1))
 			{

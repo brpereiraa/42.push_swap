@@ -13,22 +13,26 @@
 NAME = push_swap
 
 CFLAGS = -Wall -Wextra -Werror
-SRC = src/main.c src/operations.c src/operations2.c src/operations3.c src/utils.c src/utils2.c src/simple.c src/simple2.c src/radix.c
+SRC = src/main.c src/operations.c src/operations2.c src/operations3.c src/simple.c src/simple2.c src/radix.c utils/utils.c utils/utils2.c utils/arg_check.c
 OBJS = ${SRC:.c=.o}
 
 RM = rm -f
 CFLAGS = -Wall -Wall -Wextra
-
-$(NAME): $(OBJS)
-	cc $(CFLAGS) $(OBJS) -o $(NAME) 
+LIBFT = libft/libft.a
 
 all: $(NAME)
 	@echo "Done!"
 
+$(NAME): $(OBJS)
+	$(MAKE) $(LIBFT)
+	cc $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME) 
+
 clean: 
+	$(MAKE) $(LIBFT) clean
 	$(RM) $(OBJS)
 
 fclean: clean
+	$(MAKE) $(LIBFT) fclean
 	$(RM) $(NAME) 
 
 re: fclean all
