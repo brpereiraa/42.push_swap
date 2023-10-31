@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bruno <bruno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/31 01:27:53 by bruno            ###   ########.fr       */
+/*   Updated: 2023/10/31 14:52:46 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int main(int argc, char **argv)
 	if (argc < 2)
     return(-1);
 
+  if(ft_check_args(argv))
+    exit(EXIT_FAILURE);
   ft_stack_init(head_a, atoi(argv[1]));    
   for (int i = 2; i < argc; i++) {
     int content = atoi(argv[i]);

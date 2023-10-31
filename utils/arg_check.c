@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bruno <bruno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 22:27:53 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/31 01:34:00 by bruno            ###   ########.fr       */
+/*   Updated: 2023/10/31 14:53:48 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ int ft_dup_check(char **argv)
 
 int ft_check_args(char **argv)
 {
-    if (ft_isnum(argv[1]) || ft_dup_check(argv))
+    if (!ft_isnum(argv[1]) || !ft_dup_check(argv))
+    {
+        printf("Error\n");
         return (1);
+    }
     return (0);
 }
