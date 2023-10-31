@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bruno <bruno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:21 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/20 16:51:35 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/10/31 01:36:44 by bruno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ int ft_rra(t_stack **head, int flag)
   t_stack *tail;
   t_stack *new_tail;
 
-  tail = (t_stack *)malloc(sizeof(t_stack));
-  new_tail = (t_stack *)malloc(sizeof(t_stack));
   if(ft_stack_size(*head) < 2)
     return (-1);
   tail = ft_last_node(*head);
@@ -71,8 +69,6 @@ int ft_rrb(t_stack **head, int flag)
   t_stack *tail;
   t_stack *new_tail;
 
-  tail = (t_stack *)malloc(sizeof(t_stack));
-  new_tail = (t_stack *)malloc(sizeof(t_stack));
   if(ft_stack_size(*head) < 2)
     return (-1);
   tail = ft_last_node(*head);
