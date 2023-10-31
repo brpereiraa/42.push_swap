@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations3.c                                      :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/08 18:13:29 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/31 19:14:23 by brunolopes       ###   ########.fr       */
+/*   Created: 2023/04/25 18:50:31 by brpereir          #+#    #+#             */
+/*   Updated: 2023/06/16 10:02:03 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-void ft_rrr(t_stack *head_a, t_stack *head_b)
+int	ft_print_str(char *s)
 {
-  ft_rra(&head_a, 0);
-  ft_rrb(&head_b, 0);
-  ft_printf("rrr\n");
+	size_t	i;
+
+	i = -1;
+	if (!s)
+		return (write(1, "(null)", 6));
+	while (s[++i])
+		ft_putchar_fd(s[i], 1);
+	return (i);
 }

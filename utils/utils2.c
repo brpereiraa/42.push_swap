@@ -81,10 +81,10 @@ void ft_print_list(t_stack *stack)
 {
 	while(stack)
 	{
-		printf("Value: %i\nIndex: %i\n\n", stack->content, stack->index);
+		ft_printf("Value: %i\nIndex: %i\n\n", stack->content, stack->index);
 		stack = stack->next;
 	}
-	printf("\n\n");
+	ft_printf("\n\n");
 }
 
 void ft_free_stack(t_stack *stack)

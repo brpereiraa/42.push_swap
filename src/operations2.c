@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bruno <bruno@student.42.fr>                +#+  +:+       +#+        */
+/*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:21 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/31 01:36:44 by bruno            ###   ########.fr       */
+/*   Updated: 2023/10/31 19:14:13 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void ft_ra(t_stack **head, int flag)
   *head = (*head)->next;
   tail->next->next = NULL;
   if(flag)
-    printf("ra\n");
+    ft_printf("ra\n");
 }
 
 void ft_rb(t_stack **head, int flag)
@@ -37,14 +37,14 @@ void ft_rb(t_stack **head, int flag)
   *head = (*head)->next;
   tail->next->next = NULL;
   if(flag)
-    printf("rb\n");
+    ft_printf("rb\n");
 }
 
 void ft_rr(t_stack *head_a, t_stack *head_b)
 {
   ft_ra(&head_a, 0);
   ft_rb(&head_b, 1);
-  printf("rr\n");
+  ft_printf("rr\n");
 }
 
 int ft_rra(t_stack **head, int flag)
@@ -60,7 +60,7 @@ int ft_rra(t_stack **head, int flag)
   tail->next = *head;
   *head = tail;
   if(flag)
-    printf("rra\n");
+    ft_printf("rra\n");
   return (0);
 }
 
@@ -77,6 +77,6 @@ int ft_rrb(t_stack **head, int flag)
   tail->next = *head;
   *head = tail;
   if(flag)
-    printf("rrb\n");
+    ft_printf("rrb\n");
   return (0);
 }

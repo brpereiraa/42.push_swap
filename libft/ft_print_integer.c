@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations3.c                                      :+:      :+:    :+:   */
+/*   ft_print_integer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/08 18:13:29 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/31 19:14:23 by brunolopes       ###   ########.fr       */
+/*   Created: 2023/04/25 18:43:50 by brpereir          #+#    #+#             */
+/*   Updated: 2023/06/16 10:02:19 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-void ft_rrr(t_stack *head_a, t_stack *head_b)
+int	ft_print_integer(int c)
 {
-  ft_rra(&head_a, 0);
-  ft_rrb(&head_b, 0);
-  ft_printf("rrr\n");
+	char	*temp;
+	int		size;
+
+	if (!c)
+		return (write(1, "0", 1));
+	temp = ft_itoa (c);
+	ft_putstr_fd (temp, 1);
+	size = ft_strlen(temp);
+	free(temp);
+	return (size);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 22:21:27 by brpereir          #+#    #+#             */
-/*   Updated: 2023/04/24 19:40:28 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/06/16 10:25:19 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
+# include <stdarg.h>
+# include <stdio.h>
+# include <fcntl.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 typedef struct s_list
 {
@@ -72,5 +80,21 @@ void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
 char			*ft_strtrim(char const *s1, char const *set);
+
+//next_line functions
+char			*join_string(char *first, char *copy);
+unsigned int	ft_strchrn(const char *str);
+char			*get_next_line(int fd);
+
+//printf functions
+int				ft_print_unsigned_decimal(unsigned int n);
+int				ft_print_percent(void);
+int				ft_print_str(char *s);
+int				ft_print_integer(int c);
+int				ft_print_char(int c);
+int				ft_print_pointer(unsigned long c);
+int				ft_print_decimal(int c);
+int				ft_print_hex(unsigned int c, char casing);
+int				ft_printf(const char *str, ...);
 
 #endif

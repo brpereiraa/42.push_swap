@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations3.c                                      :+:      :+:    :+:   */
+/*   ft_print_decimal.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/08 18:13:29 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/31 19:14:23 by brunolopes       ###   ########.fr       */
+/*   Created: 2023/05/06 15:50:56 by brpereir          #+#    #+#             */
+/*   Updated: 2023/06/16 10:02:35 by brunolopes       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-void ft_rrr(t_stack *head_a, t_stack *head_b)
+int	ft_print_decimal(int c)
 {
-  ft_rra(&head_a, 0);
-  ft_rrb(&head_b, 0);
-  ft_printf("rrr\n");
+	char	*temp;
+	size_t	size;
+
+	if (!c)
+		return (write(1, "0", 1));
+	temp = ft_itoa (c);
+	ft_putstr_fd (temp, 1);
+	size = ft_strlen(temp);
+	free(temp);
+	return (size);
 }
