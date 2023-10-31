@@ -34,3 +34,6 @@ so:
 	$(CC) -fPIC $(CFLAGS) $(SRCS) $(BONUS_SRCS)
 	cc -shared -o libft.so $(OBJS) $(BONUS_OBJS)
 
+.PHONY: all clean fclean client
+
+.SILENT:

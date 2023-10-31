@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   arg_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bruno <bruno@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 22:27:53 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/29 22:27:53 by marvin           ###   ########.fr       */
+/*   Updated: 2023/10/31 01:23:29 by bruno            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/push_swap.h"
 
 static int	ft_isnum(char *num)
 {
@@ -47,4 +49,9 @@ int ft_dup_check(char **argv)
 }
 
 
-int ft_check_args(char **argv, )
+int ft_check_args(char **argv)
+{
+    if (ft_isnum(argv[1]) || ft_dup_check(argv))
+        return (1);
+    return (0);
+}

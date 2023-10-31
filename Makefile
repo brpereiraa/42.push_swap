@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+         #
+#    By: bruno <bruno@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/08 19:05:23 by brpereir          #+#    #+#              #
-#    Updated: 2023/10/10 15:35:40 by brunolopes       ###   ########.fr        #
+#    Updated: 2023/10/31 01:22:44 by bruno            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,21 +18,22 @@ OBJS = ${SRC:.c=.o}
 
 RM = rm -f
 CFLAGS = -Wall -Wall -Wextra
-LIBFT = libft/libft.a
+LIBFT = libft
+LIBFT_N = libft/libft.a
 
 all: $(NAME)
 	@echo "Done!"
 
 $(NAME): $(OBJS)
-	$(MAKE) $(LIBFT)
-	cc $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME) 
+	$(MAKE) --no-print-directory -C $(LIBFT)
+	cc $(CFLAGS) $(OBJS) $(LIBFT_N) -o $(NAME) 
 
 clean: 
-	$(MAKE) $(LIBFT) clean
+	$(MAKE) --no-print-directory -C $(LIBFT) clean
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(MAKE) $(LIBFT) fclean
+	$(MAKE) --no-print-directory -C $(LIBFT) fclean
 	$(RM) $(NAME) 
 
 re: fclean all
