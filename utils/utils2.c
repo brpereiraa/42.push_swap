@@ -1,44 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/02 17:08:06 by brpereir          #+#    #+#             */
+/*   Updated: 2023/11/02 17:08:37 by brpereir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
-t_stack ft_node_new(int content)
+void	ft_add_next(t_stack *stack, int content)
 {
-	t_stack node;
+	t_stack	*node;
 
-	node.content = content;
-	return node;
-}
-
-void ft_add_last(t_stack *stack, t_stack *node)
-{
-	int	i;
-
-	i = 0;
-	while(stack->next)
-	{
-		stack = stack->next;
-		i++;
-	}
-	stack->next = node;
-	node->previous = stack;
-	node->index = i;
-}
-
-void ft_add_next(t_stack *stack, int content)
-{
-	t_stack *node;
 	node = (t_stack *)malloc(sizeof(t_stack));
-	if(!node)
+	if (!node)
 		return ;
 	node->content = content;
 	node->next = NULL;
-	while(stack->next)
+	while (stack->next)
 		stack = stack->next;
 	stack->next = node;
 	node->previous = stack;
 	node->index = -1;
-}			
+}
 
-void ft_stack_init(t_stack *stack, int content)
+void	ft_stack_init(t_stack *stack, int content)
 {
 	stack->content = content;
 	stack->next = NULL;
@@ -46,7 +36,7 @@ void ft_stack_init(t_stack *stack, int content)
 	stack->index = -1;
 }
 
-int ft_min_value(t_stack **stack)
+int	ft_min_value(t_stack **stack)
 {
 	t_stack	*temp;
 	int		i;
@@ -77,24 +67,14 @@ int	ft_min(t_stack *stack)
 	return (min);
 }
 
-void ft_print_list(t_stack *stack)
+void	ft_free_stack(t_stack *stack)
 {
-	while(stack)
-	{
-		ft_printf("Value: %i\nIndex: %i\n\n", stack->content, stack->index);
-		stack = stack->next;
-	}
-	ft_printf("\n\n");
-}
+	t_stack	*temp;
 
-void ft_free_stack(t_stack *stack)
-{
-	t_stack *temp;
-
-	while(stack)
+	while (stack)
 	{
 		temp = stack->next;
-		free(stack);
+		free (stack);
 		stack = temp;
 	}
 }

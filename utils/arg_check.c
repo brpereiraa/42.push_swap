@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
+/*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 22:27:53 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/31 19:15:39 by brunolopes       ###   ########.fr       */
+/*   Updated: 2023/11/02 17:09:53 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,33 +28,32 @@ static int	ft_isnum(char *num)
 	return (1);
 }
 
-int ft_dup_check(char **argv)
+int	ft_dup_check(char **argv)
 {
-    int	i;
-    int	j;
+	int	i;
+	int	j;
 
-    i = 1;
-    while (argv[i])
-    {
-        j = i + 1;
-        while (argv[j])
-        {
-            if (ft_strcmp(argv[i], argv[j]) == 0)
-                return (0);
-            j++;
-        }
-        i++;
-    }
-    return (1);
+	i = 1;
+	while (argv[i])
+	{
+		j = i + 1;
+		while (argv[j])
+		{
+			if (ft_strcmp(argv[i], argv[j]) == 0)
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }
 
-
-int ft_check_args(char **argv)
+int	ft_check_args(char **argv)
 {
-    if (!ft_isnum(argv[1]) || !ft_dup_check(argv))
-    {
-        ft_printf("Error\n");
-        return (1);
-    }
-    return (0);
+	if (!ft_isnum(argv[1]) || !ft_dup_check(argv))
+	{
+		ft_printf ("Error\n");
+		return (1);
+	}
+	return (0);
 }

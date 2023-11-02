@@ -29,8 +29,6 @@ t_stack ft_new_stack(t_stack **stack, int content);
 t_stack *ft_last_node(t_stack *head);
 size_t ft_stack_size(t_stack *head);
 int ft_is_sorted(t_stack *head);
-t_stack ft_node_new(int content);
-void ft_add_last(t_stack *stack, t_stack *node);
 void ft_add_next(t_stack *stack, int content);
 void ft_stack_init(t_stack *stack, int content);
 void ft_simple_sort(t_stack **stack_a, t_stack **stack_b);
