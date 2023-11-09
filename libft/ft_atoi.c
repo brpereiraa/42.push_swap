@@ -33,9 +33,9 @@ static int	whitespaces(char *str, int *ptr_i)
 
 int	ft_atoi(char *str)
 {
-	int	sign;
-	int	result;
-	int	i;
+	int		sign;
+	long	result;
+	int		i;
 
 	result = 0;
 	sign = whitespaces(str, &i);
@@ -46,5 +46,10 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	result *= sign;
+	if(result > 2147483647 || result < -2147483648)
+	{
+		ft_printf("Error\n");
+		exit(EXIT_FAILURE);
+	}
 	return (result);
 }
