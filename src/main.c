@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
+/*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/31 14:52:46 by brunolopes       ###   ########.fr       */
+/*   Updated: 2023/11/09 14:37:08 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int main(int argc, char **argv)
 
   if(ft_check_args(argv))
     exit(EXIT_FAILURE);
-  ft_stack_init(head_a, atoi(argv[1]));    
+  ft_stack_init(head_a, ft_atoi(argv[1]));    
   for (int i = 2; i < argc; i++) {
-    int content = atoi(argv[i]);
+    int content = ft_atoi(argv[i]);
     ft_add_next(head_a, content);
   }
   if (ft_is_sorted(head_a))
