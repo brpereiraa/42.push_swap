@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 17:08:06 by brpereir          #+#    #+#             */
-/*   Updated: 2023/11/09 15:00:21 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:52:46 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,11 @@ void	ft_free_stack(t_stack *stack)
 	}
 }
 
-void ft_print_list(t_stack *stack)
-{
-	while(stack)
-	{
-		printf("Something: %i\n", stack->content);
-		stack = stack->next;
-	}
-}
+// void	ft_print_list (t_stack *stack)
+// {
+// 	while (stack)
+// 	{
+// 		printf("Something: %i\n", stack->content);
+// 		stack = stack->next;
+// 	}
+// }

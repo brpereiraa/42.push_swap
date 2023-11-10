@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:33 by brpereir          #+#    #+#             */
-/*   Updated: 2023/11/02 17:11:46 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:54:10 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_stack_size(t_stack *head)
 
 	i = 0;
 	if (!head)
-		return 0;
+		return (0);
 	while (head->next)
 	{
 		head = head->next;
@@ -39,7 +39,7 @@ int	ft_is_sorted(t_stack *head)
 	while (head && head->next)
 	{
 		if (head->next->content < head->content)
-		return (0);
+			return (0);
 		head = head->next;
 	}
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 22:27:53 by marvin            #+#    #+#             */
-/*   Updated: 2023/11/10 15:19:49 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:00:57 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_isnum(char **num)
 	int	j;
 
 	j = 0;
-	while(num[++j])
+	while (num[++j])
 	{
 		i = 0;
 		if (num[j][0] == '-')
@@ -49,10 +49,10 @@ static int	ft_dup_check(char **argv)
 
 void	ft_check_args(char **argv, t_stack *stack)
 {
-	if (!ft_isnum(argv) || !ft_dup_check(argv))
+	if (!ft_isnum (argv) || !ft_dup_check (argv))
 	{
 		ft_printf ("Error\n");
-		ft_free_stack(stack);
-    	exit(EXIT_FAILURE);
+		ft_free_stack (stack);
+		exit (EXIT_FAILURE);
 	}
 }

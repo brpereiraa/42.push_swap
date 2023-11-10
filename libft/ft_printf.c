@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
+/*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:43:53 by brpereir          #+#    #+#             */
-/*   Updated: 2023/06/16 10:01:40 by brunolopes       ###   ########.fr       */
+/*   Updated: 2023/11/10 15:52:16 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,7 @@ int	ft_printf(const char *str, ...)
 	while (str[++i])
 	{
 		if (str[i] == '%')
-		{
 			len += ft_format(str[++i], ap);
-		}	
 		else
 		{
 			ft_putchar_fd (str[i], 1);
