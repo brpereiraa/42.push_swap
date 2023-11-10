@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 22:27:53 by marvin            #+#    #+#             */
-/*   Updated: 2023/11/10 15:12:52 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:19:49 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,12 @@ static int	ft_dup_check(char **argv)
 	return (1);
 }
 
-void	ft_check_args(char **argv)
+void	ft_check_args(char **argv, t_stack *stack)
 {
 	if (!ft_isnum(argv) || !ft_dup_check(argv))
 	{
 		ft_printf ("Error\n");
+		ft_free_stack(stack);
     	exit(EXIT_FAILURE);
 	}
 }

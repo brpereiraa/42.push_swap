@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/11/10 15:10:45 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:20:44 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,11 @@ int main(int argc, char **argv)
   t_stack *head_a;
   t_stack *head_b;
 
-  head_a = (t_stack *)malloc(sizeof(t_stack));
-  head_b = NULL;
 	if (argc < 2)
     return(-1);
-
-  ft_check_args(argv);
+  head_a = (t_stack *)malloc(sizeof(t_stack));
+  head_b = NULL;
+  ft_check_args(argv, head_a);
   ft_stack_init(head_a, ft_atoi(argv[1]));    
   for (int i = 2; i < argc; i++) {
     int content = ft_atoi(argv[i]);

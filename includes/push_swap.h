@@ -43,7 +43,7 @@ void ft_radix_sort(t_stack **stack_a, t_stack **stack_b);
 void ft_index_stack(t_stack **stack_a);
 void ft_print_list(t_stack *stack);
 void ft_free_stack(t_stack *stack);
-void ft_check_args(char **argv);
+void ft_check_args(char **argv, t_stack *stack);
 void ft_print_list(t_stack *stack);
 
 #endif
