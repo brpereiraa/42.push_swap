@@ -6,11 +6,17 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/11/10 15:27:16 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:20:37 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	error(void)
+{
+	write (2, "Error\n", 6);
+	exit (1);
+}
 
 static void	ft_sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
@@ -27,7 +33,7 @@ int	main(int argc, char **argv)
 	int		i;
 
 	if (argc < 2)
-		exit(EXIT_FAILURE);
+		error ();
 	head_a = (t_stack *)malloc(sizeof(t_stack));
 	head_b = NULL;
 	i = 2;
@@ -38,7 +44,7 @@ int	main(int argc, char **argv)
 	if (ft_is_sorted (head_a))
 	{
 		ft_free_stack (head_a);
-		exit (EXIT_FAILURE);
+		error ();
 	}
 	ft_index_stack(&head_a);
 	ft_sort_stack(&head_a, &head_b);

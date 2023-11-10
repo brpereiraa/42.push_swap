@@ -6,11 +6,17 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 22:22:28 by brpereir          #+#    #+#             */
-/*   Updated: 2023/11/10 15:51:24 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/11/10 17:51:54 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	error(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
 
 static int	whitespaces(char *str, int *ptr_i)
 {
@@ -47,9 +53,6 @@ int	ft_atoi(char *str)
 	}
 	result *= sign;
 	if (result > 2147483647 || result < -2147483648)
-	{
-		ft_printf("Error\n");
-		exit(EXIT_FAILURE);
-	}
+		error ();
 	return (result);
 }
