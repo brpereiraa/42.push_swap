@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:21 by brpereir          #+#    #+#             */
-/*   Updated: 2023/11/10 16:02:18 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:24:36 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	ft_rrb(t_stack **head, int flag)
 	t_stack	*tail;
 	t_stack	*new_tail;
 
-	if ((*head) < 2)
+	if(ft_stack_size(*head) < 2)
 		return (-1);
 	tail = ft_last_node(*head);
 	new_tail = tail->previous;
