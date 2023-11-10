@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bruno <bruno@student.42.fr>                +#+  +:+       +#+         #
+#    By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/08 19:05:23 by brpereir          #+#    #+#              #
-#    Updated: 2023/10/31 01:22:44 by bruno            ###   ########.fr        #
+#    Updated: 2023/11/09 14:55:01 by brpereir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(MAKE) --no-print-directory -C $(LIBFT)
-	cc $(CFLAGS) $(OBJS) $(LIBFT_N) -o $(NAME) 
+	cc -g $(CFLAGS) $(OBJS) $(LIBFT_N) -o $(NAME) 
 
 clean: 
 	$(MAKE) --no-print-directory -C $(LIBFT) clean

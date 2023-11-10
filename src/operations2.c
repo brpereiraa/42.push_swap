@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunolopes <brunolopes@student.42.fr>      +#+  +:+       +#+        */
+/*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:13:21 by brpereir          #+#    #+#             */
-/*   Updated: 2023/10/31 19:14:13 by brunolopes       ###   ########.fr       */
+/*   Updated: 2023/11/10 14:31:44 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void ft_ra(t_stack **head, int flag)
   tail->next = *head;
   *head = (*head)->next;
   tail->next->next = NULL;
+  tail->next->previous = tail;
   if(flag)
     ft_printf("ra\n");
 }

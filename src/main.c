@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/11/09 14:37:08 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:10:45 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ int main(int argc, char **argv)
 	if (argc < 2)
     return(-1);
 
-  if(ft_check_args(argv))
-    exit(EXIT_FAILURE);
+  ft_check_args(argv);
   ft_stack_init(head_a, ft_atoi(argv[1]));    
   for (int i = 2; i < argc; i++) {
     int content = ft_atoi(argv[i]);
