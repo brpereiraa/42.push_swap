@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:43:42 by brpereir          #+#    #+#             */
-/*   Updated: 2023/11/10 15:20:44 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:22:42 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,13 @@ int main(int argc, char **argv)
   head_b = NULL;
   ft_check_args(argv, head_a);
   ft_stack_init(head_a, ft_atoi(argv[1]));    
-  for (int i = 2; i < argc; i++) {
-    int content = ft_atoi(argv[i]);
-    ft_add_next(head_a, content);
-  }
+  for (int i = 2; i < argc; i++)
+    ft_add_next(head_a, ft_atoi(argv[i]));
   if (ft_is_sorted(head_a))
-    return (0);
+  {
+    ft_free_stack(head_a);
+    exit(EXIT_FAILURE);
+  }
   ft_index_stack(&head_a);
   ft_sort_stack(&head_a, &head_b);
   ft_free_stack(head_a);
