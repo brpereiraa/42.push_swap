@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 22:22:28 by brpereir          #+#    #+#             */
-/*   Updated: 2023/11/10 17:51:54 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/12/05 19:05:14 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,8 @@ static int	whitespaces(char *str, int *ptr_i)
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	if (str[i] && (str[i] == 43 || str[i] == 45))
-	{
-		if (str[i] == 45)
+		if (str[i++] == 45)
 			count *= -1;
-		i++;
-	}
 	*ptr_i = i;
 	return (count);
 }

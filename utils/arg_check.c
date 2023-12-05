@@ -6,7 +6,7 @@
 /*   By: brpereir <brpereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 22:27:53 by marvin            #+#    #+#             */
-/*   Updated: 2023/11/10 17:46:27 by brpereir         ###   ########.fr       */
+/*   Updated: 2023/12/05 19:06:53 by brpereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ static int	ft_isnum(char **num)
 		i = 0;
 		if (num[j][0] == '-')
 			i++;
+		if (!num[j][i])
+			return (0);
 		while (num[j][i])
 			if (!ft_isdigit(num[j][i++]))
 				return (0);
+		ft_atoi(num[j]);
 	}
 	return (1);
 }
@@ -47,11 +50,8 @@ static int	ft_dup_check(char **argv)
 	return (1);
 }
 
-void	ft_check_args(char **argv, t_stack *stack)
+void	ft_check_args(char **argv)
 {
 	if (!ft_isnum (argv) || !ft_dup_check (argv))
-	{
-		ft_free_stack (stack);
 		error ();
-	}
 }
